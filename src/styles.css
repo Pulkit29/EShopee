@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+:root {
+	/* Defining constants for colors and styles */
+	--appBgColor: white;
+	--appNavBgColor: #00E5EE;
+	--appActiveNavBgColor: #20b2aa;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 0rem;
+  background-color: var(--appBgColor);
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
