@@ -31,9 +31,10 @@ nav>div>ul>li.active>a{
 		background-color: var(--appActiveNavBgColor) !important;
 	}
 }
-
-.navbar-inverse .navbar-toggler-right .navbar-toggler-icon {
+.navbar .navbar-toggler{
 	cursor: pointer;
-    background-color: transparent;
-    color: red !important;
+	border-color: white;
+	color: white;
+	background-color: transparent;
 }
+
