@@ -1,15 +1,15 @@
 nav{
-	background-color: var(--appNavBgColor);
-	border-color: var(--appNavBgColor);
+	background-color: var(--appNavBgColor) !important;
+	border-color: var(--appNavBgColor) !important;
 	border-radius: 0;
-	padding-right: 10px;
+	padding-right: 10px !important;
 }
 
-nav>ul>li>a{
-	color: white;
+nav>div>ul>li>a{
+	color: white !important;
 }
 
-nav>ul>li>a:hover{
+nav>div>ul>li>a:hover{
 	color: white;
 	background-color: var(--appActiveNavBgColor);
 }
@@ -18,6 +18,10 @@ nav>ul>li>a:hover{
 	color: white;
 }
 
-nav>ul>li.active>a{
-	background-color: var(--appActiveNavBgColor);
+nav>div>ul>li.active>a{
+	background-color: var(--appActiveNavBgColor) !important;
+}
+
+.navbar-toggler-right{
+	color: white !important;
 }
