@@ -1,4 +1,4 @@
-export class ProductCategories {
+export class ProductCategory {
   
   id : String;
   title : String;

@@ -8,20 +8,8 @@
     }
 }
 
-/*@media (max-width: 768px) {
-    .category-card-image{
-        height: 400px;
-    }
-}*/
-
-/*@media (min-width: 992px) {
-    .card-columns {
-        height: 600px;
-    }
+.custom-style{
+    max-height: 300px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
-
-@media (min-width: 1200px) {
-    .card-columns {
-        column-count: 5;
-    }
-}*/

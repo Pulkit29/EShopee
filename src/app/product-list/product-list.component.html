@@ -1,0 +1,19 @@
+<p>
+  product-list works! with {{endpoint}}
+</p>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let product of products">
+			<img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap">
+
+			<div class="card-block">
+				<h4 class="card-title">{{product.title}}</h4>
+				<p class="card-text">{{product.description}}</p>
+			</div>
+			<div class="card-footer">
+				<small class="text-muted">Last updated 3 mins ago</small>
+		    </div>
+		</div>
+	</div>
+</div>

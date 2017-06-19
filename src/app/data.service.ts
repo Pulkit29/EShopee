@@ -4,21 +4,22 @@ import { Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { ProductCategories } from './product-categories/product-categories'
+import { ProductCategory } from './product-categories/product-category'
+import { Product } from './product-list/product'
 
 @Injectable()
 export class DataService {
 
   	constructor(private jsonp: Jsonp) { }
 
-  	fetchCategories(endpoint:string):Observable<ProductCategories[]>{
+  	fetchCategories(endpoint:string):Observable<ProductCategory[]>{
   		return this.jsonp.get("https://www.reddit.com" +
         endpoint +
         "/.json?jsonp=JSONP_CALLBACK").map(data => {
-            var categories:ProductCategories[] = [];
+            var categories:ProductCategory[] = [];
             let children = data.json().data.children;
             for(var i=0; i<children.length; i++) {
-                    let category:ProductCategories = new ProductCategories();
+                    let category:ProductCategory = new ProductCategory();
                     category.title = children[i].data.title;
                     category.imgage_url = children[i].data.url;
                     categories.push(category);
@@ -26,4 +27,21 @@ export class DataService {
             return categories;
         });
 	}
+
+    fetchProductsForCategory(endpoint:string):Observable<Product[]>{
+        return this.jsonp.get("https://www.reddit.com" +
+        endpoint +
+        "/.json?jsonp=JSONP_CALLBACK").map(data => {
+            var products:Product[] = [];
+            let children = data.json().data.children;
+            for(var i=0; i<children.length; i++) {
+                    let product:Product = new Product();
+                    product.title = children[i].data.title;
+                    product.description = children[i].data.title;
+                    product.imgage_url = children[i].data.url;
+                    products.push(product);
+            }
+            return products;
+        });
+    }
 }

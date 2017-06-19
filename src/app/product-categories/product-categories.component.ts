@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
-import { ProductCategories } from './product-categories';
+import { ProductCategory } from './product-category';
 
 @Component({
   selector: 'app-product-categories',
@@ -12,7 +12,7 @@ export class ProductCategoriesComponent implements OnInit {
   
   @Input() endpoint : string;
 
-  categories: ProductCategories[];
+  categories: ProductCategory[];
 
   constructor(private data: DataService) { }
 

@@ -4,7 +4,7 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let category of categories">
+		<!-- <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let category of categories">
 			<img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap">
 
 			<div class="card-block">
@@ -14,6 +14,26 @@
 			<div class="card-footer">
 				<small class="text-muted">Last updated 3 mins ago</small>
 		    </div>
+		</div> -->
+
+				<!--Card Inverse-->
+		<div class="card card-inverse text-center custom-style col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let category of categories">
+
+		    <!--Image-->
+		    <img class="img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image">
+
+			<a>
+			    <!--Content-->
+			    <div class="card-img-overlay">
+		        	<h4 class="card-title">Card title</h4>
+		        	<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		        	<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			    </div>
+			</a>
+
 		</div>
+		<!--/.Card Inverse-->
+
+
 	</div>
 </div>
