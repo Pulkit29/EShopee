@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ProductCategory } from './product-category';
 
@@ -10,7 +10,7 @@ import { ProductCategory } from './product-category';
 })
 export class ProductCategoriesComponent implements OnInit {
   
-  @Input() endpoint : string;
+  endpoint : string= "/r/askreddit";
 
   categories: ProductCategory[];
 

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { JsonpModule } from '@angular/http';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -15,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductCategoriesComponent } from './product-categories/product-categories.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
+import { appRouterModule } from "./app.routes";
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     FormsModule,
     HttpModule,
     JsonpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    appRouterModule
   ],
 
   providers: [],
