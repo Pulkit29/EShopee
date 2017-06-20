@@ -13,20 +13,15 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: [
-      { path: '', redirectTo: 'categories', pathMatch: 'full' },
       { path: 'categories', component: ProductCategoriesComponent }, //url : /
-      { path: 'categories/:id', component: ProductListComponent }, //url : /
+      { path: 'categories/:id', component: ProductListComponent }//url : /
     ]
   },
   // map '/' to '/home' as our default route
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/home/categories',
     pathMatch: 'full'
-  },
-  {
-  	path: 'product-categories',
-  	component: ProductCategoriesComponent
   }
 ];
 

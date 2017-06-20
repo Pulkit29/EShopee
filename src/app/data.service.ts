@@ -30,6 +30,7 @@ export class DataService {
 	}
 
     fetchProductsForCategory(source:string, endpoint:string):Observable<Product[]>{
+    /* use source in place of endpoint for dynamic urls */
         return this.jsonp.get("https://www.reddit.com" +
         endpoint +
         "/.json?jsonp=JSONP_CALLBACK").map(data => {
