@@ -1,6 +1,6 @@
 export class ProductCategory {
   
-  id : String;
+  id : number;
   title : String;
   imgage_url : String;
   

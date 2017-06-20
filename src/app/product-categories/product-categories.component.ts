@@ -8,6 +8,7 @@ import { ProductCategory } from './product-category';
   styleUrls: ['./product-categories.component.css'],
   providers: [DataService]
 })
+
 export class ProductCategoriesComponent implements OnInit {
   
   endpoint : string= "/r/askreddit";
