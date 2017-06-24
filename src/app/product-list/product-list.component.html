@@ -5,15 +5,22 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let product of products">
-			<img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap">
+				<img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap">
 
-			<div class="card-block">
-				<h4 class="card-title">{{product.title}}</h4>
-				<p class="card-text">{{product.description}}</p>
-			</div>
-			<div class="card-footer">
-				<small class="text-muted">Last updated 3 mins ago</small>
-		    </div>
+
+				<div class="card-block" style="background-color: pink;">
+					<a [routerLink]="['./product/', product.id]" ><span>
+						<h4 class="card-title">{{product.title}}</h4>
+						<p class="card-text">{{product.description}}</p>
+					</span>
+					</a>
+				</div>
+				<div class="card-footer" style="bottom: 0 !important;">
+					<button onclick="" class="fa fa-heart" style="color: lightgrey; float: left;">
+					</button>
+					<button onclick="" style="color: blue; float: right;">Buy
+					</button>
+			    </div>
 		</div>
 	</div>
 </div>
