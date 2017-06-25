@@ -5,7 +5,33 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let product of products" >
-				<img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap" >
+				<!-- <img class="card-img-top category-card-image img-responsive" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2840%29.jpg" alt="Card image cap" > -->
+
+			<ngb-carousel class="card-img-top category-card-image">
+			  <ng-template ngbSlide>
+			    <img src="https://lorempixel.com/900/500?r=1" class="img-responsive" alt="Random first slide">
+			<!--     <div class="carousel-caption">
+			      <h3>First slide label</h3>
+			      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			    </div> -->
+			  </ng-template>
+			  <ng-template ngbSlide>
+			    <img src="https://lorempixel.com/900/500?r=2" alt="Random second slide">
+			    <!-- <div class="carousel-caption">
+			      <h3>Second slide label</h3>
+			      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			    </div> -->
+			  </ng-template>
+			  <ng-template ngbSlide>
+			    <img src="https://lorempixel.com/900/500?r=1" alt="Random third slide">
+			    <!-- <div class="carousel-caption">
+			      <h3>Third slide label</h3>
+			      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+			    </div> -->
+			  </ng-template>
+			</ngb-carousel>
+
+
 
 
 				<div class="card-block">
@@ -15,7 +41,7 @@
 					</span>
 					</a>
 				</div>
-				<div class="card-footer">
+				<div class="card-footer" style="margin-left: -15px; margin-right: -15px;">
 					<button onclick="" class="fa fa-heart" style="color: lightgrey; float: left;">
 					</button>
 					<button onclick="" style="color: var(--appNavBgColor); float: right;">Buy
