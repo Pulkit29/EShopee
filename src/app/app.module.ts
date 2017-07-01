@@ -5,6 +5,19 @@ import { HttpModule } from '@angular/http';
 import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+/*
+import { AngularFireModule } from 'angularfire2';
+
+*/
+import { AngularFirebaseService } from './providers/angular-firebase.service';
+
+import { AngularFireModule } from 'angularfire2';
+
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -16,6 +29,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 import { appRouterModule } from "./app.routes";
 
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBMmT5EZaiu4uTnJw9-hHv907gaHCFYQko",
+  authDomain: "eshopee-76b45.firebaseapp.com",
+  databaseURL: "https://eshopee-76b45.firebaseio.com",
+  projectId: "eshopee-76b45",
+  storageBucket: "",
+  messagingSenderId: "102603975299"
+};
 
 @NgModule({
   declarations: [
@@ -32,10 +54,13 @@ import { appRouterModule } from "./app.routes";
     HttpModule,
     JsonpModule,
     NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     appRouterModule
   ],
 
-  providers: [],
+  providers: [AngularFirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

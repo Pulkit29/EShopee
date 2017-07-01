@@ -20,7 +20,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link" href="https://medium.com/"><i class="fa fa-medium" aria-hidden="true"></i></a>
+        <a class="nav-link" (click)="login()" *ngIf="!(user | async)?.uid"><i class="fa fa-medium" aria-hidden="true"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
