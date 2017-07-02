@@ -3,11 +3,13 @@ import {AngularFirebaseService} from '../providers/angular-firebase.service';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  animations: [moveIn(), fallIn()]
+  animations: [moveIn(), fallIn()],
+  providers: [AngularFirebaseService]
 })
 export class SignupComponent implements OnInit {
 
@@ -18,15 +20,23 @@ export class SignupComponent implements OnInit {
 	state: string = '';
 	  error: any;
 
-	  constructor(private af: AngularFirebaseService) {
-
+	  constructor(private af: AngularFirebaseService, private router: Router) {
 	  }
 
 	  onSubmit(formData) {
 	    if(formData.valid) {
-	      console.log(formData.value);
+	      //alert(formData.value.email + formData.value.password);
+	      
+	      this.af.signup(formData.value.email, formData.value.password)
+	    	.then(() => {
+	    		this.router.navigate(['/home/login'])
+		      }, (error) => {
+		      		this.error = error;
+		      });
+
+
 	      /*
-	      this.af.auth.createUser({
+	      this.af._afAuth.auth.createUser({
 	        email: formData.value.email,
 	        password: formData.value.password
 	      }).then(

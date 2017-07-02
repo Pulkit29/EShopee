@@ -75,4 +75,8 @@ export class AngularFirebaseService  implements CanActivate {
       this._afAuth.auth.signOut();
   }
 
+  signup(newEmail: string, newPassword: string): firebase.Promise<any> {
+    return this._afAuth.auth.createUserWithEmailAndPassword(newEmail, newPassword);
+  }
+
 }
