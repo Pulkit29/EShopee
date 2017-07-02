@@ -28,6 +28,9 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
 import { ProductListComponent } from './product-list/product-list.component';
 
 import { appRouterModule } from "./app.routes";
+import { LoginComponent } from './login/login.component';
+import { EmailLoginComponent } from './email-login/email-login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 export const firebaseConfig = {
@@ -46,7 +49,10 @@ export const firebaseConfig = {
     NavComponent,
     FooterComponent,
     ProductCategoriesComponent,
-    ProductListComponent
+    ProductListComponent,
+    LoginComponent,
+    EmailLoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
