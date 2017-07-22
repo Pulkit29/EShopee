@@ -18,6 +18,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+import { CoreModule } from './coreModule/core.module';
+
 
 
 import { AppComponent } from './app.component';
