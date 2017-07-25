@@ -4,8 +4,8 @@ import { Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { ProductCategory } from './product-categories/product-category'
-import { Product } from './product-list/product'
+import { ProductCategory } from './items/product-categories/product-category'
+import { Product } from './items/product-list/product'
 
 @Injectable()
 export class DataService {

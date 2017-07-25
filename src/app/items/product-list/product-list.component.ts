@@ -2,9 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
-import { DataService } from '../data.service';
+import { DataService } from '../../data.service';
 import { Product } from './product';
-import { ProductCategory } from '../product-categories/product-category';
 
 
 @Component({
@@ -13,12 +12,13 @@ import { ProductCategory } from '../product-categories/product-category';
   styleUrls: ['./product-list.component.css'],
   providers: [DataService]
 })
+
 export class ProductListComponent implements OnInit {
   
   @Input() endpoint : string;
   products: Product[];
-  categories : ProductCategory[];
-  constructor(private route: ActivatedRoute, private data:DataService) { }
+  
+  constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
       let id = this.route.snapshot.paramMap.get('id');
@@ -29,6 +29,22 @@ export class ProductListComponent implements OnInit {
       e => console.log('onError: %s', e),
       () => console.log('onCompleted')
 	   );
+     
+  }
+
+  buyClicked(productId: String){
+    alert("Buy Clicked : " + productId);
+
+/****
+  If not user logged-in redirect to login page else redirect to payment start page
+****/
+
+    //this.router.navigate(['/login']);
+
+  }
+
+  favouriteClicked(productId: String){
+    alert("favouriteClicked Clicked : " + productId);
   }
 
 }

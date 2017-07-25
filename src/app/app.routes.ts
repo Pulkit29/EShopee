@@ -1,6 +1,7 @@
+/*
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './coreModule/home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailLoginComponent } from './email-login/email-login.component';
@@ -24,12 +25,36 @@ const routes: Routes = [
       { path: 'email-login', component: EmailLoginComponent }
     ]
   },
+  
   // map '/' to '/home' as our default route
   {
     path: '',
-    redirectTo: '/home/categories',
+    redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home', loadChildren: 'app/coreModule/core.module#CoreModule'
   }
 ];
 
 export const appRouterModule = RouterModule.forRoot(routes);
+
+*/
+
+
+import {NgModule}     from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot([
+            {path: '', redirectTo: '/categories', pathMatch: 'full'},
+            {path: 'categories', loadChildren: 'app/items/items.module#ItemsModule'}
+        ])
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+export class appRouterModule {
+}

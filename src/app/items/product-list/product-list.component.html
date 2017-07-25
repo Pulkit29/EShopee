@@ -1,7 +1,6 @@
 <p>
   product-list works! with {{endpoint}}
 </p>
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let product of products" >
@@ -31,22 +30,20 @@
 			  </ng-template>
 			</ngb-carousel>
 
-
-
-
-				<div class="card-block">
-					<a [routerLink]="['./product/', product.id]" ><span>
-						<h4 class="card-title">{{product.title}}</h4>
-						<p class="card-text">{{product.description}}</p>
-					</span>
-					</a>
-				</div>
-				<div class="card-footer" style="margin-left: -15px; margin-right: -15px;">
-					<button onclick="" class="fa fa-heart" style="color: lightgrey; float: left;">
-					</button>
-					<button onclick="" style="color: var(--appNavBgColor); float: right;">Buy
-					</button>
-			    </div>
+			<div class="card-block">
+				<a [routerLink]="['./product/', product.id]" ><span>
+					<h4 class="card-title">{{product.title}}</h4>
+					<p class="card-text">{{product.description}}</p>
+				</span>
+				</a>
+			</div>
+			
+			<div class="card-footer" style="margin-left: -15px; margin-right: -15px;">
+				<button (click)="favouriteClicked(product.id);" class="fa fa-heart" style="color: lightgrey; float: left;">
+				</button>
+				<button (click)="buyClicked(product.id);" style="color: var(--appNavBgColor); float: right;">Buy
+				</button>
+		    </div>
 		</div>
 	</div>
 </div>
