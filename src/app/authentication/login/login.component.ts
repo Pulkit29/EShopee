@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFirebaseService} from '../../providers/angular-firebase.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
   providers: [AngularFirebaseService]
 })
-export class LoginComponent{
-
-	constructor(private af: AngularFirebaseService, public router: Router){
+export class LoginComponent implements OnInit{
+	returnUrl : string;
+	constructor(private af: AngularFirebaseService, public router: Router, private route: ActivatedRoute){
 		this.af._afAuth.authState;
+
+
+
+
+
 		//this.router.navigate(['/login']);
 	}
 
+	ngOnInit(){
+		//reset login state
+		this.af.logout();
+
+		this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+	}
+
 	loginByEmail(){
-		//this.router.navigate(['/home/email-login']);
+		this.router.navigate(['auth/email-login']);
 	}
 }

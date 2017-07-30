@@ -9,6 +9,8 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
 import { ProductListComponent } from './product-list/product-list.component';
 import {AngularFirebaseService} from './providers/angular-firebase.service';
 
+import { AuthenticationModule } from './authentication/authentication.module';
+
 
 // Route config let's you map routes to components
 const routes: Routes = [
@@ -49,7 +51,8 @@ import {Routes, RouterModule} from '@angular/router';
     imports: [
         RouterModule.forRoot([
             {path: '', redirectTo: '/categories', pathMatch: 'full'},
-            {path: 'categories', loadChildren: 'app/items/items.module#ItemsModule'}
+            {path: 'categories', loadChildren: 'app/items/items.module#ItemsModule'},
+            {path: 'auth', loadChildren: 'app/authentication/authentication.module#AuthenticationModule'}
         ])
     ],
     exports: [

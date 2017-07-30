@@ -23,6 +23,7 @@ import { appRouterModule } from "./app.routes";
 import { CoreModule } from './coreModule/core.module';
 
 
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBMmT5EZaiu4uTnJw9-hHv907gaHCFYQko",
   authDomain: "eshopee-76b45.firebaseapp.com",

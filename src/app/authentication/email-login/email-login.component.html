@@ -3,7 +3,7 @@
 </p>
 
 <div class="form-container">
-    <a [routerLink]="['/home/login']" id="goback">Go back</a>
+    <a [routerLink]="['/auth/login']" id="goback">Go back</a>
     <h2>Custom Login</h2>
 
     <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
@@ -14,6 +14,6 @@
       <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
 
       <button type="submit" [disabled]="!formData.valid" class="basic-btn">Log in</button>
-      <a routerLink="/home/signup" class="alc">Don't have an account?</a>
+      <a routerLink="/auth/signup" class="alc">Don't have an account?</a>
   </form>
 </div>

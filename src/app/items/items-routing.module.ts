@@ -21,7 +21,8 @@ const routes: Routes = [];
 	                    {
 	                        path: ':id',
 	                        component: ProductListComponent
-	                    }
+	                    },
+                      {path: 'auth', loadChildren: 'app/authentication/authentication.module#AuthenticationModule'}
                 	]
             	}
        		 ])

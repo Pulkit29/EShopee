@@ -5,6 +5,8 @@ import 'rxjs/add/operator/switchMap';
 import { DataService } from '../../data.service';
 import { Product } from './product';
 
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +20,7 @@ export class ProductListComponent implements OnInit {
   @Input() endpoint : string;
   products: Product[];
   
-  constructor(private route: ActivatedRoute, private data: DataService) { }
+  constructor(private route: ActivatedRoute, private data: DataService, public router: Router) { }
 
   ngOnInit() {
       let id = this.route.snapshot.paramMap.get('id');
@@ -29,17 +31,16 @@ export class ProductListComponent implements OnInit {
       e => console.log('onError: %s', e),
       () => console.log('onCompleted')
 	   );
-     
   }
 
   buyClicked(productId: String){
-    alert("Buy Clicked : " + productId);
+    //alert("Buy Clicked : " + productId);
 
 /****
   If not user logged-in redirect to login page else redirect to payment start page
 ****/
 
-    //this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
 
   }
 
